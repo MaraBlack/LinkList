@@ -1,0 +1,57 @@
+<div class="home-container flex flex-column overflow-hidden">
+  <div class="header flex align-items-center m-4">
+    <p class="text-2xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-2xl mr-2">
+      My shopping list
+    </p>
+    <div
+      class="align-items-center justify-content-center cursor-pointer text-xl xl:text-7xl lg:text-2xl md:text-xl sm:text-lg p-2 xl:p-4 lg:p-4 md:p-3 sm:p-2 ml-auto"
+    >
+      <i
+        class="pi pi-bell"
+        pBadge
+        severity="danger"
+        style="font-size: inherit"
+      ></i>
+    </div>
+  </div>
+
+  <div class="lists flex flex-column justify-content-center align-items-center">
+    <div class="search-list">
+      <!-- <input type="text" pInputText /> -->
+    </div>
+    <div class="all-lists w-full" style="min-height: 300px">
+      <div *ngFor="let list of allLists; index as i" class="">
+        <app-list-item [data]="list"></app-list-item>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="footer fixed flex flex-column bottom-0 bg-white w-screen pb-2 justify-content-center align-items-center"
+  >
+    <div
+      class="add-list flex bg-orange-300 border-circle cursor-pointer my-2 p-1 text-xl xl:text-7xl lg:text-2xl md:text-xl sm:text-lg"
+    >
+      <i
+        class="pi pi-plus p-2 xl:p-4 lg:p-4 md:p-3 sm:p-2"
+        style="font-size: inherit"
+      ></i>
+    </div>
+    <div
+      class="nav flex justify-content-around flex-wrap text-xl xl:text-7xl lg:text-2xl md:text-xl sm:text-lg mt-2"
+    >
+      <i
+        class="pi pi-home mx-4 p-2 xl:p-4 lg:p-4 md:p-3 sm:p-2 cursor-pointer"
+        style="font-size: inherit; color: inherit"
+      ></i>
+      <i
+        class="pi pi-search mx-4 p-2 xl:p-4 lg:p-4 md:p-3 sm:p-2 cursor-pointer"
+        style="font-size: inherit; color: inherit"
+      ></i>
+      <i
+        class="pi pi-user mx-4 p-2 xl:p-4 lg:p-4 md:p-3 sm:p-2 cursor-pointer"
+        style="font-size: inherit; color: inherit"
+      ></i>
+    </div>
+  </div>
+</div>

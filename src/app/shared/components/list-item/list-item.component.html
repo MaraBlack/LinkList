@@ -1,0 +1,28 @@
+<div class="list-container bg-yellow-200 border-round-xl p-2 m-2">
+  <div class="list-header flex">
+    <div class="list-header-text">
+      <div class="text-lg xl:text-7xl lg:text-2xl md:text-xl sm:text-lg m-2">
+        {{ data.name }}
+      </div>
+    </div>
+    <div
+      class="list-header-icons flex ml-auto align-items-center justify-content-center text-lg xl:text-7xl lg:text-2xl md:text-xl sm:text-lg text-600 m-2"
+    >
+      <i
+        class="ml-3 cursor-pointer"
+        [ngClass]="data.isFav ? 'pi pi-heart-fill' : 'pi pi-heart'"
+        style="font-size: inherit; color: inherit"
+      ></i>
+      <i
+        class="pi pi-share-alt ml-3 cursor-pointer"
+        style="font-size: inherit; color: inherit"
+      ></i>
+    </div>
+  </div>
+  <div class="list-details flex text-500">
+    <div class="text-sm xl:text-7xl lg:text-2xl md:text-xl sm:text-lg m-2">
+      {{ data.items.length }}
+      {{ data.items.length > 1 ? "products" : "product" }}
+    </div>
+  </div>
+</div>
