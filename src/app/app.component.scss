@@ -1,0 +1,12 @@
+@import "primeicons/primeicons.css";
+
+::ng-deep {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  p-sidebar div.p-sidebar {
+    position: relative !important;
+  }
+}

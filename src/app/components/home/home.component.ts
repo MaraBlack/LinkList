@@ -5,7 +5,6 @@ import { BadgeModule } from 'primeng/badge';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
-
 import { ListItemComponent } from '../../shared/components/list-item/list-item.component';
 
 @Component({
@@ -14,7 +13,6 @@ import { ListItemComponent } from '../../shared/components/list-item/list-item.c
   imports: [
     CommonModule,
     ListItemComponent,
-    BadgeModule,
     IconFieldModule,
     InputIconModule,
     ScrollPanelModule,

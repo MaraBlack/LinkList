@@ -1,1 +1,77 @@
-<app-home></app-home>
+<div class="app-container overflow-hidden">
+  <!-- <button type="button" pButton pRipple icon="pi pi-bars" label="Show" (click)="menu.toggle($event)"></button>
+    <div class="navigable-page">
+     
+    </div> -->
+  <div class="card">
+    <!-- <p-button (click)="menu.toggle($event)" icon="pi pi-ellipsis-v" /> -->
+    <div
+      class="app-header flex align-items-center justify-content-center py-4 px-2 text-2xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-2xl"
+    >
+      <div
+        class="menu align-items-center text-orange-400 ml-2 p-1 w-3rem cursor-pointer my-1"
+        (click)="menu.toggle($event)"
+      >
+        <i
+          class="pi pi-bars p-1 xl:p-4 lg:p-4 md:p-3 sm:p-2"
+          style="font-size: inherit"
+        ></i>
+      </div>
+
+      <div
+        class="notofication align-items-center justify-content-center cursor-pointer p-2 xl:p-4 lg:p-4 md:p-3 sm:p-2 ml-auto"
+      >
+        <i
+          class="pi pi-bell"
+          pBadge
+          severity="danger"
+          style="font-size: inherit"
+        ></i>
+      </div>
+    </div>
+
+    <p-menu
+      #menu
+      [popup]="true"
+      [model]="navItems"
+      styleClass="w-full h-full p-4 text-600  text-2xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-2xl"
+    >
+      <ng-template pTemplate="start">
+        <div class="close-header flex">
+          <div class="close-btn ml-auto" (click)="menu.toggle($event)">
+            <i
+              class="pi pi-times xl:p-4 lg:p-4 md:p-3 sm:p-2"
+              style="font-size: inherit"
+            ></i>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="submenuheader" let-item>
+        <span class="font-bold">{{ item.label }}</span>
+      </ng-template>
+      <ng-template pTemplate="item" let-item>
+        <ng-container *ngIf="item.route">
+          <div
+            (click)="onItemClick(item)"
+            class="mt-2 p-2 w-full"
+            [ngClass]="item.isActive ? 'surface-ground border-round-lg' : ''"
+          >
+            <a
+              [routerLink]="item.route"
+              class="p-menuitem-link"
+              [ngClass]="item.isActive ? 'text-orange-400' : ''"
+            >
+              <i
+                [ngClass]="item.icon"
+                class="xl:p-4 lg:p-4 md:p-3 sm:p-2"
+                style="font-size: inherit"
+              ></i>
+              <span class="ml-2">{{ item.label }}</span>
+            </a>
+          </div>
+        </ng-container>
+      </ng-template>
+    </p-menu>
+    <router-outlet></router-outlet>
+  </div>
+</div>
