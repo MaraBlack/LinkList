@@ -1,10 +1,57 @@
 <div class="new-list bg-primary-reverse" style="margin-top: 16%">
-  <div class="flex align-items-center">
+  <div class="header flex align-items-center">
     <div
-      class="cursor-pointer m-2 text-2xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-2xl text-white" (click)="onBackClick()">
-      <i class="pi pi-angle-left text-color-secondary p-1 xl:p-4 lg:p-4 md:p-3 sm:p-2" style="font-size: inherit"></i>
+      class="cursor-pointer m-2 text-2xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-2xl text-white"
+      (click)="onBackClick()"
+    >
+      <i
+        class="pi pi-angle-left text-color-secondary p-1 xl:p-4 lg:p-4 md:p-3 sm:p-2"
+        style="font-size: inherit"
+      ></i>
     </div>
-    <p class="text-2xl text-color-secondary xl:text-7xl lg:text-6xl md:text-5xl sm:text-2xl"> Create new list </p>
+    <p
+      class="text-2xl text-color-secondary xl:text-7xl lg:text-6xl md:text-5xl sm:text-2xl"
+    >
+      Create new list
+    </p>
   </div>
+  <div class="content m-4">
+    <div class="list-name">
+      <div class="py-3 text-2xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-2xl">List name</div>
+      <p-floatLabel>
+        <input
+          pInputText
+          id="name"
+          class="text-lg"
+          style="height: 36px"
+          [(ngModel)]="newListData.name"
+        />
+      </p-floatLabel>
+    </div>
+    <div class="colors mt-2 mr-4">
+      <div class="py-3 text-2xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-2xl">List color</div>
+      <div class="flex flex-wrap">
+        <div *ngFor="let color of colors; index as i" class="">
+          <div
+            class="p-2 m-2 border-round-lg w-2rem h-2rem xl:w-8rem xl:h-8rem lg:w-6rem lg:h-6rem md:h-4rem md:w-4rem"
+            [ngClass]="'bg-' + color"
+            (click)="setColor(color)"
+          ></div>
+        </div>
+      </div>
+    </div>
 
+    <div class="proucts mt-3">
+      <div class="py-3 text-2xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-2xl">Categories</div>
+      <div class="grid justify-content-center">
+        <div *ngFor="let category of categores; index as i" class="m-1">
+          <div
+            class="m-1 col h-6rem w-6rem xl:w-13rem xl:h-13rem lg:w-10rem lg:h-10rem md:h-8rem md:w-8rem flex text-color-secondary text-center surface-ground border-round-lg border-50  justify-content-center align-items-center xl:text-5xl lg:text-4xl md:text-3xl sm:text-xl"
+            >
+            <div>{{ category }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
