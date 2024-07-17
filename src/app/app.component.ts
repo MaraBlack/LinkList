@@ -25,6 +25,7 @@ import { ThemeService } from './shared/services/theme.service';
 })
 export class AppComponent {
   title = 'LinkList';
+  isCurrentThemeLight = true;
   navItems!: {
     label: string;
     items: { label: string; icon: string; route: string; isActive: boolean }[];
@@ -67,6 +68,8 @@ export class AppComponent {
 
   onThemeChange(): void {
     this.themeService.switchTheme();
+    this.isCurrentThemeLight = this.themeService.getCurrentTheme() === 'light-theme';
+
   }
 
   onItemClick(item: any) {
@@ -80,5 +83,6 @@ export class AppComponent {
       item.isActive = true;
       this.router.navigate([item.route]);
     }
+
   }
 }

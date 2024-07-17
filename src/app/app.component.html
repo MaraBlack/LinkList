@@ -1,9 +1,9 @@
 <div class="app-container overflow-hidden surface-500">
   <div
-    class="app-header bg-primary z-2 fixed w-full flex align-items-center justify-content-center pt-2 px-2 text-2xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-2xl"
+    class="app-header bg-primary-reverse z-2 fixed w-full flex align-items-center justify-content-center pt-2 px-2 text-2xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-2xl"
   >
     <div
-      class="menu align-items-center text-color w-3rem cursor-pointer my-1 px-1"
+      class="menu align-items-center text-primary w-3rem cursor-pointer my-1 px-1"
       (click)="menu.toggle($event)"
     >
       <i
@@ -13,7 +13,7 @@
     </div>
 
     <div
-      class="notification text-color align-items-center justify-content-center cursor-pointer p-2 xl:p-4 lg:p-4 md:p-3 sm:p-2 ml-auto"
+      class="notification text-color-secondary align-items-center justify-content-center cursor-pointer p-2 xl:p-4 lg:p-4 md:p-3 sm:p-2 ml-auto"
     >
       <i
         class="pi pi-bell"
@@ -29,7 +29,7 @@
     [popup]="true"
     [model]="navItems"
     appendTo="body"
-    styleClass="w-full h-full p-4 text-600  text-2xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-2xl"
+    styleClass="w-full h-full p-4 flex flex-column text-lg xl:text-7xl lg:text-2xl md:text-xl sm:text-lg"
   >
     <ng-template pTemplate="start">
       <div class="close-header flex">
@@ -68,8 +68,11 @@
     </ng-template>
 
     <ng-template pTemplate="end">
-      <div class="m-2 mt-4 p-2">
-        <i class="pi pi-moon xl:p-4 lg:p-4 md:p-3 sm:p-2" style="font-size: inherit" (click)="onThemeChange()"></i>
+      <div class="bottom-0 absolute align-content-end m-2 mt-4 p-2">
+        <div clsaa="footer flex ">
+          <span class="text-color-secondary"> Maria </span>
+          <i class="text-color-secondary xl:p-4 lg:p-4 md:p-3 sm:p-2 ml-4" [ngClass]="isCurrentThemeLight ? 'pi pi-moon' : 'pi pi-sun'" style="font-size: inherit" (click)="onThemeChange(); menu.toggle($event)"></i>
+        </div>
       </div>
     </ng-template>
   </p-menu>

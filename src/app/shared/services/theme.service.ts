@@ -1,5 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
+import { retry } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -20,5 +21,9 @@ export class ThemeService {
     }
     themeLink.href = 'light-theme' + '.css';
     this.theme = 'light-theme';
+  }
+
+  getCurrentTheme(): string {
+    return this.theme;
   }
 }
