@@ -50,6 +50,12 @@ export class AppComponent {
             isActive: true,
           },
           {
+            label: 'My Lists',
+            icon: 'pi pi-list',
+            route: '/myLists',
+            isActive: false,
+          },
+          {
             label: 'Search',
             icon: 'pi pi-search',
             route: '/search',

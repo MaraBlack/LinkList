@@ -7,15 +7,20 @@ export const routes: Routes = [
       import('./components/home/home.component').then(
         (mod) => mod.HomeComponent
       ),
-    children: [
-      {
-        path: 'home/addList',
-        loadComponent: () =>
-          import('./shared/components/new-list/new-list.component').then(
-            (mod) => mod.NewListComponent
-          ),
-      },
-    ],
+  },
+  {
+    path: 'myLists',
+    loadComponent: () =>
+      import('./components/my-lists/my-lists.component').then(
+        (mod) => mod.MyListsComponent
+      ),
+  },
+  {
+    path: 'myLists/addList',
+    loadComponent: () =>
+      import('./shared/components/new-list/new-list.component').then(
+        (mod) => mod.NewListComponent
+      ),
   },
   {
     path: 'search',

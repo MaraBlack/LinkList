@@ -1,4 +1,4 @@
-<div class="app-container overflow-hidden surface-500">
+<div class="app-container overflow-hidden">
   <div
     class="app-header bg-primary-reverse z-2 fixed w-full flex align-items-center justify-content-center pt-2 px-2 text-2xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-2xl"
   >
@@ -48,7 +48,7 @@
       <ng-container *ngIf="item.route">
         <div
           (click)="onItemClick(item)"
-          class="mt-2 p-2 w-full"
+          class="mt-2 p-2 w-full align-items-center;"
           [ngClass]="item.isActive ? 'surface-ground border-round-lg' : ''"
         >
           <a
@@ -61,7 +61,7 @@
               class="xl:p-4 lg:p-4 md:p-3 sm:p-2"
               style="font-size: inherit"
             ></i>
-            <span class="ml-2">{{ item.label }}</span>
+            <span class="ml-3">{{ item.label }}</span>
           </a>
         </div>
       </ng-container>
