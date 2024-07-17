@@ -12,6 +12,7 @@ export interface ListItem {
 export interface ListData {
   id: string;
   name: string;
+  color?: string;
   items: ListItem[];
   dateCreated: string;
   lastDateAccessed: string;

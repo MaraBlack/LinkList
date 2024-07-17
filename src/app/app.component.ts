@@ -1,15 +1,12 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
-import { Sidebar, SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 import { HomeComponent } from './components/home/home.component';
-import { NavItem } from './models/nav-items.interface';
-import { MenuItem, MessageService, PrimeNGConfig } from 'primeng/api';
+import { PrimeNGConfig } from 'primeng/api';
 import { MenuModule } from 'primeng/menu';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
 import { BadgeModule } from 'primeng/badge';
+import { ThemeService } from './shared/services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -33,7 +30,11 @@ export class AppComponent {
     items: { label: string; icon: string; route: string; isActive: boolean }[];
   }[];
 
-  constructor(private router: Router, private primengConfig: PrimeNGConfig) {}
+  constructor(
+    private themeService: ThemeService,
+    private router: Router,
+    private primengConfig: PrimeNGConfig
+  ) {}
 
   ngOnInit() {
     this.primengConfig.ripple = true;
@@ -62,6 +63,10 @@ export class AppComponent {
         ],
       },
     ];
+  }
+
+  onThemeChange(): void {
+    this.themeService.switchTheme();
   }
 
   onItemClick(item: any) {
